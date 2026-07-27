@@ -105,12 +105,15 @@
   <div class="absolute bottom-10 left-1/3 w-[500px] h-[500px] bg-[#d4af37]/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
 
   <!-- HEADER / NAVIGATION -->
-  <!-- No Mobile: Apenas a Logo Centralizada e Maior | No Desktop: Menu Completo Fixado -->
-  <header class="relative z-50 md:sticky md:top-0 backdrop-blur-md bg-brand-bgDark/80 border-b border-zinc-900/60 md:border-zinc-900 transition-all duration-300 py-4 md:py-3">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center md:justify-between">
+  <!-- No Mobile: Sem retângulo de fundo (transparente) | No Desktop: Com barra fixa elegante -->
+  <header class="relative z-50 bg-transparent border-none md:sticky md:top-0 md:backdrop-blur-md md:bg-brand-bgDark/80 md:border-b md:border-zinc-900 transition-all duration-300 py-4 md:py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
       
-      <!-- Logo Destaque (Maior e Centralizada no Celular) -->
-      <a href="#" class="flex items-center justify-center group">
+      <!-- Espaçador invisível para centralizar a logo perfeitamente no Mobile -->
+      <div class="md:hidden w-10"></div>
+
+      <!-- Logo Destaque Flutuante (Sem caixa preta atrás) -->
+      <a href="#" class="flex items-center justify-center group flex-1 md:flex-none md:justify-start">
         <img src="logo.png" alt="Vetorize Logo" class="h-28 md:h-32 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" style="mix-blend-mode: screen;">
       </a>
 
@@ -141,11 +144,44 @@
         </a>
       </div>
 
+      <!-- Botão Menu Hambúrguer (3 Linhas) no Celular -->
+      <div class="md:hidden flex justify-end w-10">
+        <button id="mobile-menu-btn" type="button" class="text-zinc-300 hover:text-brand-gold focus:outline-none p-2 rounded-lg bg-zinc-900/60 border border-zinc-800/80 backdrop-blur-sm" aria-label="Abrir Menu">
+          <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+          <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Gaveta do Menu Mobile (Abre ao clicar no botão de 3 linhas) -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-zinc-800 bg-brand-bgDark/98 backdrop-blur-xl px-6 pt-4 pb-8 space-y-4 mt-2 shadow-2xl">
+      <a href="#ecossistema" class="block text-base font-medium text-zinc-300 hover:text-brand-gold py-2 border-b border-zinc-900 transition-colors duration-200">O Ecossistema</a>
+      <a href="#gestao" class="block text-base font-medium text-zinc-300 hover:text-brand-gold py-2 border-b border-zinc-900 transition-colors duration-200">Vetorize Gestão</a>
+      <a href="#marketing" class="block text-base font-medium text-zinc-300 hover:text-brand-gold py-2 transition-colors duration-200">Social Media & Design</a>
+      
+      <div class="pt-2 border-t border-zinc-800 flex items-center justify-between">
+        <a href="https://instagram.com/vetorize.br" target="_blank" class="flex items-center space-x-2 text-sm font-medium text-zinc-300 hover:text-brand-gold transition-colors duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+          <span>@vetorize.br</span>
+        </a>
+      </div>
+      
+      <a href="https://wa.me/5561995769445?text=Olá!%20Achei%20a%20Vetorize%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista."
+         target="_blank"
+         class="flex items-center justify-center space-x-2 bg-gradient-to-r from-brand-gold to-brand-goldHover text-black font-bold py-3.5 rounded-full w-full gold-glow-hover mt-4">
+        <i data-lucide="message-circle" class="w-5 h-5 fill-black"></i>
+        <span>Falar no WhatsApp</span>
+      </a>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="relative pt-8 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+  <section class="relative pt-6 pb-20 md:pt-20 md:pb-32 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
       <!-- Main Headline -->
@@ -410,8 +446,8 @@
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON (Círculo Verde Flutuante) -->
-  <div class="fixed bottom-6 right-6 z-50">
+  <!-- FLOATING WHATSAPP BUTTON (Círculo Verde Flutuante Garanto no Mobile e Desktop) -->
+  <div class="fixed bottom-6 right-6 z-[999]">
     <a href="https://wa.me/5561995769445?text=Olá!%20Achei%20a%20Vetorize%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista."
        target="_blank"
        class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 relative group"
@@ -428,8 +464,30 @@
     lucide.createIcons();
   </script>
 
-  <!-- Interactive JavaScript for Cursor Glow Effect on Cards -->
+  <!-- Interactive JavaScript for Hamburger Menu & Cursor Glow Effect -->
   <script>
+    // Toggle para abrir e fechar o menu das 3 linhas no celular
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Fecha o menu ao clicar em qualquer item
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+
     // Cursor positioning script for glow effect on cards
     const cards = document.querySelectorAll('.card-glow');
     cards.forEach(card => {
