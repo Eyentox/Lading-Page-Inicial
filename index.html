@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VETORIZE | Gestão Inteligente & Marketing Premium</title>
+  <meta name="description" content="Organize sua gestão comercial e domine a presença digital do seu negócio com a Vetorize. Software de gestão e posicionamento visual de alto impacto.">
+  
+  <!-- SEO Meta Tags -->
+  <meta property="og:title" content="VETORIZE | Gestão Inteligente & Marketing Premium">
+  <meta property="og:description" content="A união perfeita entre software de gestão comercial inteligente e posicionamento visual de alto impacto para sua empresa escalar.">
+  <meta property="og:type" content="website">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS v3 via Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+            logo: ['"Brice SemiExpanded"', '"Brice"', 'Syne', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              gold: '#d4af37', // Dourado Metálico
+              goldHover: '#aa820a', // Dourado Escuro para Hover
+              goldLight: '#f3e5ab', // Dourado Claro Iluminado
+              bgDark: '#09090b', // Zinc-950
+              cardBg: '#121214', // Custom dark card bg
+              cardBorder: '#27272a', // Zinc-800
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style type="text/css">
+    @font-face {
+      font-family: 'Brice SemiExpanded';
+      src: local('Brice SemiExpanded'), local('Brice-SemiExpanded'), local('Brice');
+    }
+    body {
+      background-color: #09090b;
+      color: #f4f4f5;
+    }
+    
+    .gold-glow-hover {
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .gold-glow-hover:hover {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
+      border-color: #d4af37;
+    }
+
+    .card-glow {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-glow::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(212, 175, 55, 0.08), transparent 40%);
+      pointer-events: none;
+      transition: opacity 0.5s;
+      opacity: 0;
+    }
+
+    .card-glow:hover::before {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-gold selection:text-black min-h-screen relative overflow-x-hidden">
+
+  <!-- Ambient Light Effects (Orbs) -->
+  <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#d4af37]/10 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 animate-pulse-slow"></div>
+  <div class="absolute top-[40%] right-1/4 w-[600px] h-[600px] bg-[#aa820a]/5 rounded-full blur-[150px] pointer-events-none -translate-y-1/2 animate-pulse-slow"></div>
+  <div class="absolute bottom-10 left-1/3 w-[500px] h-[500px] bg-[#d4af37]/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-bgDark/80 border-b border-zinc-900 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      
+      <!-- Espaçador invisível para balancear e centralizar a logo no Mobile -->
+      <div class="md:hidden w-10"></div>
+
+      <!-- Logo Centralizada (Mobile) e Maior (Fixo) -->
+      <a href="#" class="flex items-center justify-center group flex-1 md:flex-none md:justify-start">
+        <img src="logo.png" alt="Vetorize Logo" class="h-24 md:h-32 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" style="mix-blend-mode: screen;">
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#ecossistema" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors duration-200">O Ecossistema</a>
+        <a href="#gestao" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors duration-200">Vetorize Gestão</a>
+        <a href="#marketing" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors duration-200">Social Media & Design</a>
+      </nav>
+
+      <!-- Desktop CTA Button -->
+      <div class="hidden md:flex items-center space-x-4">
+        <!-- LOCAL 1: Ícone SVG do Instagram no Cabeçalho Desktop -->
+        <a href="https://instagram.com/vetorize.br"
+           target="_blank"
+           class="inline-flex items-center justify-center w-10 h-10 bg-zinc-900/80 border border-zinc-800 text-[#d4af37] hover:text-white hover:border-[#d4af37] rounded-full transition-all duration-200"
+           title="Siga no Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/5561995769445?text=Olá!%20Achei%20a%20Vetorize%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista."
+           target="_blank"
+           class="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-gold to-brand-goldHover text-black font-semibold px-5 py-2.5 rounded-full hover:scale-105 active:scale-95 transition-all duration-200 gold-glow-hover">
+          <i data-lucide="message-circle" class="w-4 h-4 fill-black"></i>
+          <span>Falar no WhatsApp</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex justify-end w-10">
+        <button id="mobile-menu-btn" type="button" class="text-zinc-400 hover:text-white focus:outline-none p-1" aria-label="Abrir Menu">
+          <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+          <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-zinc-900 bg-brand-bgDark/95 backdrop-blur-lg px-4 pt-2 pb-6 space-y-4">
+      <a href="#ecossistema" class="block text-base font-medium text-zinc-300 hover:text-brand-gold py-2 transition-colors duration-200">O Ecossistema</a>
+      <a href="#gestao" class="block text-base font-medium text-zinc-300 hover:text-brand-gold py-2 transition-colors duration-200">Vetorize Gestão</a>
+      <a href="#marketing" class="block text-base font-medium text-zinc-300 hover:text-brand-gold py-2 transition-colors duration-200">Social Media & Design</a>
+      
+      <div class="flex items-center space-x-2.5 py-2 border-t border-zinc-800">
+        <a href="https://instagram.com/vetorize.br" target="_blank" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors duration-200">vetorize.br</a>
+      </div>
+      
+      <a href="https://wa.me/5561995769445?text=Olá!%20Achei%20a%20Vetorize%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista."
+         target="_blank"
+         class="flex items-center justify-center space-x-2 bg-gradient-to-r from-brand-gold to-brand-goldHover text-black font-bold py-3 rounded-full w-full gold-glow-hover">
+        <i data-lucide="message-circle" class="w-5 h-5 fill-black"></i>
+        <span>Falar no WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      
+      <!-- Main Headline -->
+      <h1 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.1] mb-6">
+        Organize sua Gestão e <br class="hidden sm:inline">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#f3e5ab] via-[#d4af37] to-[#aa820a]">Domine a Presença Digital</span> do Seu Negócio.
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-zinc-400 text-lg md:text-xl max-w-3xl mx-auto font-normal leading-relaxed mb-10">
+        A união perfeita entre software de gestão comercial inteligente e posicionamento visual de alto impacto.
+      </p>
+
+      <!-- Tech Partner Badges / Decorative element -->
+      <div class="pt-8 border-t border-zinc-900/80 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center opacity-65 grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="flex justify-center"><span class="text-zinc-500 font-semibold tracking-widest text-sm uppercase">✦ DESIGN PREMIUM</span></div>
+        <div class="flex justify-center"><span class="text-zinc-500 font-semibold tracking-widest text-sm uppercase">✦ PDV INTEGRADO</span></div>
+        <div class="flex justify-center"><span class="text-zinc-500 font-semibold tracking-widest text-sm uppercase">✦ EMISSÃO FISCAL</span></div>
+        <div class="flex justify-center"><span class="text-zinc-500 font-semibold tracking-widest text-sm uppercase">✦ BRANDING FORTE</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TWO-COLUMN ECOSYSTEM HIGHLIGHT -->
+  <section id="ecossistema" class="py-24 border-t border-zinc-900 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white mb-4">
+          O Ecossistema Completo para a Sua Empresa Escalar
+        </h2>
+        <p class="text-zinc-400 text-base md:text-lg">
+          De um lado, a eficiência operacional e o controle total do seu negócio. Do outro, a atração de clientes e o posicionamento de marca que você merece.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12">
+        <!-- CARD 1: VETORIZE GESTÃO -->
+        <div id="gestao" class="card-glow bg-brand-cardBg border border-brand-cardBorder hover:border-brand-gold/30 rounded-3xl p-8 md:p-10 flex flex-col justify-between group transition-all duration-300">
+          <div>
+            <!-- Label/Badge -->
+            <div class="inline-flex items-center space-x-2 text-brand-gold font-bold text-xs uppercase tracking-widest bg-[#d4af37]/10 px-3.5 py-1 rounded-full mb-6">
+              <i data-lucide="database" class="w-3.5 h-3.5"></i>
+              <span>Gestão Comercial</span>
+            </div>
+            
+            <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">
+              VETORIZE GESTÃO
+            </h3>
+            
+            <p class="text-zinc-400 mb-8 leading-relaxed">
+              Sistema comercial completo para automatizar e organizar sua operação. A ferramenta ideal para impulsionar a produtividade do seu time e organizar suas finanças de ponta a ponta.
+            </p>
+
+            <!-- Bullet points with custom styling -->
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start space-x-3 text-zinc-300">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4af37]/10 border border-brand-gold/20 flex items-center justify-center mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                </div>
+                <div>
+                  <strong class="text-white font-medium">PDV Ágil:</strong>
+                  <span class="text-zinc-400"> Realize vendas rápidas e sem atritos no seu ponto de venda.</span>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3 text-zinc-300">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4af37]/10 border border-brand-gold/20 flex items-center justify-center mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                </div>
+                <div>
+                  <strong class="text-white font-medium">Controle de Estoque:</strong>
+                  <span class="text-zinc-400"> Monitore entradas, saídas e estoque mínimo em tempo real.</span>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3 text-zinc-300">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4af37]/10 border border-brand-gold/20 flex items-center justify-center mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                </div>
+                <div>
+                  <strong class="text-white font-medium">Emissão Fiscal Agilizada:</strong>
+                  <span class="text-zinc-400"> NFe, NFCe e relatórios fiscais sem burocracia.</span>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3 text-zinc-300">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4af37]/10 border border-brand-gold/20 flex items-center justify-center mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                </div>
+                <div>
+                  <strong class="text-white font-medium">Gestão Financeira:</strong>
+                  <span class="text-zinc-400"> Contas a pagar/receber, DRE e fluxo de caixa descomplicados.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <a href="https://vetorize.meupdv.info/"
+               target="_blank"
+               class="w-full inline-flex items-center justify-center space-x-2 bg-zinc-900 border border-zinc-800 hover:border-brand-gold hover:text-black hover:bg-brand-gold text-white font-bold py-4 px-6 rounded-xl transition-all duration-300">
+              <span>Testar Sistema Gratuitamente</span>
+              <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 2: VETORIZE MARKETING -->
+        <div id="marketing" class="card-glow bg-brand-cardBg border border-brand-cardBorder hover:border-brand-gold/30 rounded-3xl p-8 md:p-10 flex flex-col justify-between group transition-all duration-300">
+          <div>
+            <!-- Label/Badge -->
+            <div class="inline-flex items-center space-x-2 text-brand-gold font-bold text-xs uppercase tracking-widest bg-[#d4af37]/10 px-3.5 py-1 rounded-full mb-6">
+              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+              <span>Branding & Design</span>
+            </div>
+            
+            <h3 class="font-display text-2xl sm:text-3xl font-extrabold text-white mb-3 tracking-tight">
+              VETORIZE MARKETING & SOCIAL MEDIA
+            </h3>
+            
+            <p class="text-zinc-400 mb-8 leading-relaxed">
+              Design estratégico e posicionamento de marca para empresas que buscam autoridade no digital. Atraia clientes premium e se destaque dos seus concorrentes.
+            </p>
+
+            <!-- Bullet points with custom styling -->
+            <ul class="space-y-4 mb-8">
+              <li class="flex items-start space-x-3 text-zinc-300">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4af37]/10 border border-brand-gold/20 flex items-center justify-center mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                </div>
+                <div>
+                  <strong class="text-white font-medium">Identidade Visual Premium:</strong>
+                  <span class="text-zinc-400"> Logotipos e paletas de cores sofisticadas que geram conexão.</span>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3 text-zinc-300">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4af37]/10 border border-brand-gold/20 flex items-center justify-center mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                </div>
+                <div>
+                  <strong class="text-white font-medium">Gestão de Redes Sociais:</strong>
+                  <span class="text-zinc-400"> Planejamento e publicação profissional no Instagram, Tik Tok e mais.</span>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3 text-zinc-300">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4af37]/10 border border-brand-gold/20 flex items-center justify-center mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                </div>
+                <div>
+                  <strong class="text-white font-medium">Design de Alta Performance:</strong>
+                  <span class="text-zinc-400"> Lâminas comerciais, apresentações comerciais e criativos para anúncios.</span>
+                </div>
+              </li>
+              <li class="flex items-start space-x-3 text-zinc-300">
+                <div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#d4af37]/10 border border-brand-gold/20 flex items-center justify-center mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5 text-brand-gold"></i>
+                </div>
+                <div>
+                  <strong class="text-white font-medium">Estratégia de Conteúdo:</strong>
+                  <span class="text-zinc-400"> Roteiros, funis de conteúdo e storytelling para conversão de leads.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <a href="https://wa.me/5561995769445?text=Olá!%20Gostaria%20de%20solicitar%20um%20diagnóstico%20visual%20para%20minha%20empresa."
+               target="_blank"
+               class="w-full inline-flex items-center justify-center space-x-2 bg-zinc-900 border border-zinc-800 hover:border-[#d4af37] hover:text-black hover:bg-[#d4af37] text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 group">
+              <span>Solicitar Diagnóstico Visual</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FINAL CTA BANNER -->
+  <section class="py-24 relative overflow-hidden">
+    <!-- Glowing background spotlight -->
+    <div class="absolute inset-0 bg-gradient-to-b from-brand-bgDark via-[#d4af37]/5 to-brand-bgDark pointer-events-none"></div>
+    
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="bg-gradient-to-b from-zinc-900 to-zinc-950 border border-zinc-800 rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
+        <!-- Decorative subtle pattern inside banner -->
+        <div class="absolute -top-12 -right-12 w-64 h-64 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-12 -left-12 w-64 h-64 bg-[#aa820a]/5 rounded-full blur-3xl pointer-events-none"></div>
+        
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+          Pronto para escalar sua empresa? <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#f3e5ab] via-[#d4af37] to-[#aa820a] font-black">Vetorize!</span>
+        </h2>
+        
+        <p class="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto mb-10">
+          Converse com um especialista agora e descubra a melhor solução para o seu momento atual de mercado.
+        </p>
+
+        <a href="https://wa.me/5561995769445?text=Olá!%20Quero%20falar%20com%20um%20especialista%20da%20Vetorize%20para%20conhecer%20as%20soluções."
+           target="_blank"
+           class="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-gold to-brand-goldHover text-black font-bold px-8 py-5 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-200 shadow-xl shadow-brand-gold/10 gold-glow-hover text-lg">
+          <i data-lucide="message-circle" class="w-6 h-6 fill-black"></i>
+          <span>Iniciar Conversa no WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black border-t border-zinc-900 pt-16 pb-8 text-zinc-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <!-- Logo and About -->
+        <div class="md:col-span-2 space-y-4">
+          <a href="#" class="flex items-center group">
+            <img src="logo-full.png" alt="Vetorize Logo" class="h-20 md:h-24 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" style="mix-blend-mode: screen;">
+          </a>
+          <p class="text-sm text-zinc-400 max-w-sm">
+            Unindo tecnologia avançada de gestão comercial à sofisticação do marketing estratégico para construir empresas de alta performance.
+          </p>
+        </div>
+
+        <!-- Links -->
+        <div>
+          <h4 class="font-semibold text-white uppercase text-xs tracking-wider mb-4">Menu</h4>
+          <ul class="space-y-2.5 text-sm">
+            <li><a href="#ecossistema" class="hover:text-white transition-colors duration-200">O Ecossistema</a></li>
+            <li><a href="#gestao" class="hover:text-white transition-colors duration-200">Vetorize Gestão</a></li>
+            <li><a href="#marketing" class="hover:text-white transition-colors duration-200">Marketing & Design</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact/Socials -->
+        <div>
+          <h4 class="font-semibold text-white uppercase text-xs tracking-wider mb-4">Contato</h4>
+          <ul class="space-y-3 text-sm">
+            <li>
+              <a href="mailto:vetorizesupp@gmail.com" class="flex items-center space-x-2.5 text-zinc-400 hover:text-white transition-colors duration-200">
+                <i data-lucide="mail" class="w-4 h-4 text-brand-gold"></i>
+                <span>vetorizesupp@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <!-- LOCAL 2: Ícone SVG do Instagram no Rodapé -->
+              <a href="https://instagram.com/vetorize.br" target="_blank" class="flex items-center space-x-2.5 text-zinc-400 hover:text-white transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+                <span>vetorize.br</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright and fine print -->
+      <div class="pt-8 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between text-xs space-y-4 md:space-y-0">
+        <p>&copy; 2026 VETORIZE. Todos os direitos reservados.</p>
+        <div class="flex space-x-6">
+          <a href="#" class="hover:text-white transition-colors duration-200">Políticas de Privacidade</a>
+          <a href="#" class="hover:text-white transition-colors duration-200">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <div class="fixed bottom-6 right-6 z-50">
+    <a href="https://wa.me/5561995769445?text=Olá!%20Achei%20a%20Vetorize%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista."
+       target="_blank"
+       class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 relative group"
+       title="Falar no WhatsApp"
+       aria-label="Falar no WhatsApp">
+      <!-- Glow effect for floating button -->
+      <span class="absolute inset-0 rounded-full bg-[#25D366]/40 blur-md scale-110 -z-10 animate-ping"></span>
+      <i data-lucide="message-circle" class="w-7 h-7 fill-white"></i>
+    </a>
+  </div>
+
+  <!-- Lucide Icon Initialization -->
+  <script>
+    lucide.createIcons();
+  </script>
+
+  <!-- Interactive JavaScript for Hamburger Menu and Cursor Glow Effect on Cards -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Close mobile menu when a link is clicked
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      });
+    });
+
+    // Cursor positioning script for glow effect on cards
+    const cards = document.querySelectorAll('.card-glow');
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--x', `${x}px`);
+        card.style.setProperty('--y', `${y}px`);
+      });
+    });
+  </script>
+
+</body>
+</html>
