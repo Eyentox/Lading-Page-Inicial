@@ -11,6 +11,9 @@
   <meta property="og:description" content="A união perfeita entre software de gestão comercial inteligente e posicionamento visual de alto impacto para sua empresa escalar.">
   <meta property="og:type" content="website">
   
+  <!-- Favicon / Ícone da Guia -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   
   <!-- Tailwind CSS v3 via Play CDN -->
@@ -102,15 +105,13 @@
   <div class="absolute bottom-10 left-1/3 w-[500px] h-[500px] bg-[#d4af37]/10 rounded-full blur-[120px] pointer-events-none animate-pulse-slow"></div>
 
   <!-- HEADER / NAVIGATION -->
-  <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-bgDark/80 border-b border-zinc-900 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+  <!-- No Mobile: Apenas a Logo Centralizada e Maior | No Desktop: Menu Completo Fixado -->
+  <header class="relative z-50 md:sticky md:top-0 backdrop-blur-md bg-brand-bgDark/80 border-b border-zinc-900/60 md:border-zinc-900 transition-all duration-300 py-4 md:py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center md:justify-between">
       
-      <!-- Espaçador invisível para balancear e centralizar a logo no Mobile -->
-      <div class="md:hidden w-10"></div>
-
-      <!-- Logo Centralizada (Mobile) e Maior (Fixo) -->
-      <a href="#" class="flex items-center justify-center group flex-1 md:flex-none md:justify-start">
-        <img src="logo.png" alt="Vetorize Logo" class="h-24 md:h-32 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" style="mix-blend-mode: screen;">
+      <!-- Logo Destaque (Maior e Centralizada no Celular) -->
+      <a href="#" class="flex items-center justify-center group">
+        <img src="logo.png" alt="Vetorize Logo" class="h-28 md:h-32 w-auto transition-transform duration-300 group-hover:scale-105 object-contain" style="mix-blend-mode: screen;">
       </a>
 
       <!-- Desktop Nav Links -->
@@ -120,9 +121,8 @@
         <a href="#marketing" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors duration-200">Social Media & Design</a>
       </nav>
 
-      <!-- Desktop CTA Button -->
+      <!-- Desktop CTA Button & Instagram -->
       <div class="hidden md:flex items-center space-x-4">
-        <!-- LOCAL 1: Ícone SVG do Instagram no Cabeçalho Desktop -->
         <a href="https://instagram.com/vetorize.br"
            target="_blank"
            class="inline-flex items-center justify-center w-10 h-10 bg-zinc-900/80 border border-zinc-800 text-[#d4af37] hover:text-white hover:border-[#d4af37] rounded-full transition-all duration-200"
@@ -141,36 +141,11 @@
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <div class="md:hidden flex justify-end w-10">
-        <button id="mobile-menu-btn" type="button" class="text-zinc-400 hover:text-white focus:outline-none p-1" aria-label="Abrir Menu">
-          <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
-          <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-b border-zinc-900 bg-brand-bgDark/95 backdrop-blur-lg px-4 pt-2 pb-6 space-y-4">
-      <a href="#ecossistema" class="block text-base font-medium text-zinc-300 hover:text-brand-gold py-2 transition-colors duration-200">O Ecossistema</a>
-      <a href="#gestao" class="block text-base font-medium text-zinc-300 hover:text-brand-gold py-2 transition-colors duration-200">Vetorize Gestão</a>
-      <a href="#marketing" class="block text-base font-medium text-zinc-300 hover:text-brand-gold py-2 transition-colors duration-200">Social Media & Design</a>
-      
-      <div class="flex items-center space-x-2.5 py-2 border-t border-zinc-800">
-        <a href="https://instagram.com/vetorize.br" target="_blank" class="text-sm font-medium text-zinc-300 hover:text-white transition-colors duration-200">vetorize.br</a>
-      </div>
-      
-      <a href="https://wa.me/5561995769445?text=Olá!%20Achei%20a%20Vetorize%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista."
-         target="_blank"
-         class="flex items-center justify-center space-x-2 bg-gradient-to-r from-brand-gold to-brand-goldHover text-black font-bold py-3 rounded-full w-full gold-glow-hover">
-        <i data-lucide="message-circle" class="w-5 h-5 fill-black"></i>
-        <span>Falar no WhatsApp</span>
-      </a>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden">
+  <section class="relative pt-8 pb-20 md:pt-20 md:pb-32 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
       
       <!-- Main Headline -->
@@ -188,7 +163,7 @@
       <div class="pt-8 border-t border-zinc-900/80 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 items-center justify-center opacity-65 grayscale hover:grayscale-0 transition-all duration-500">
         <div class="flex justify-center"><span class="text-zinc-500 font-semibold tracking-widest text-sm uppercase">✦ DESIGN PREMIUM</span></div>
         <div class="flex justify-center"><span class="text-zinc-500 font-semibold tracking-widest text-sm uppercase">✦ PDV INTEGRADO</span></div>
-        <div class="flex justify-center"><span class="text-zinc-500 font-semibold tracking-widest text-sm uppercase">✦ EMISSÃO FISCAL</span></div>
+        <div class="flex justify-center"><span class="text-zinc-500 font-semibold tracking-widest text-sm uppercase">✦ EMISSÃO ff FISCAL</span></div>
         <div class="flex justify-center"><span class="text-zinc-500 font-semibold tracking-widest text-sm uppercase">✦ BRANDING FORTE</span></div>
       </div>
     </div>
@@ -411,7 +386,6 @@
               </a>
             </li>
             <li>
-              <!-- LOCAL 2: Ícone SVG do Instagram no Rodapé -->
               <a href="https://instagram.com/vetorize.br" target="_blank" class="flex items-center space-x-2.5 text-zinc-400 hover:text-white transition-colors duration-200">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d4af37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
@@ -436,14 +410,14 @@
     </div>
   </footer>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
+  <!-- FLOATING WHATSAPP BUTTON (Círculo Verde Flutuante) -->
   <div class="fixed bottom-6 right-6 z-50">
     <a href="https://wa.me/5561995769445?text=Olá!%20Achei%20a%20Vetorize%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista."
        target="_blank"
        class="w-14 h-14 bg-[#25D366] hover:bg-[#20ba59] rounded-full flex items-center justify-center text-white shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 relative group"
        title="Falar no WhatsApp"
        aria-label="Falar no WhatsApp">
-      <!-- Glow effect for floating button -->
+      <!-- Efeito de pulso animado atrás do botão -->
       <span class="absolute inset-0 rounded-full bg-[#25D366]/40 blur-md scale-110 -z-10 animate-ping"></span>
       <i data-lucide="message-circle" class="w-7 h-7 fill-white"></i>
     </a>
@@ -454,30 +428,8 @@
     lucide.createIcons();
   </script>
 
-  <!-- Interactive JavaScript for Hamburger Menu and Cursor Glow Effect on Cards -->
+  <!-- Interactive JavaScript for Cursor Glow Effect on Cards -->
   <script>
-    // Mobile menu toggle
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    const closeIcon = document.getElementById('close-icon');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-    });
-
-    // Close mobile menu when a link is clicked
-    const mobileLinks = mobileMenu.querySelectorAll('a');
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-      });
-    });
-
     // Cursor positioning script for glow effect on cards
     const cards = document.querySelectorAll('.card-glow');
     cards.forEach(card => {
