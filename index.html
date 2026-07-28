@@ -180,8 +180,8 @@
   <div class="fixed top-0 left-1/4 w-[300px] md:w-[600px] h-[600px] bg-[#d4af37]/10 rounded-full blur-[150px] pointer-events-none -translate-y-1/2 animate-pulse-slow z-0"></div>
   <div class="fixed top-[40%] right-1/4 w-[300px] md:w-[700px] h-[700px] bg-[#aa820a]/5 rounded-full blur-[150px] pointer-events-none animate-pulse-slow z-0" style="animation-delay: 2s;"></div>
 
-  <!-- ================= HEADER ================= -->
-  <header class="absolute top-0 left-0 w-full z-50 bg-transparent md:sticky md:top-0 md:backdrop-blur-xl md:bg-[#09090b]/80 md:border-b md:border-zinc-900 transition-all duration-300 py-3 md:py-3">
+  <!-- ================= HEADER (Fixo e contínuo no desktop com fundo translúcido) ================= -->
+  <header class="absolute top-0 left-0 w-full z-50 bg-transparent md:fixed md:top-0 md:left-0 md:backdrop-blur-xl md:bg-[#09090b]/80 md:border-b md:border-zinc-900/80 transition-all duration-300 py-3 md:py-3">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative min-h-[90px] sm:min-h-0">
       
       <!-- Logo Centralizada e com Respiro Perfeito no Celular -->
@@ -227,8 +227,8 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION (Espaçamento superior perfeito para a logo) ================= -->
-  <section class="relative pt-36 sm:pt-44 pb-24 md:pt-32 md:pb-40 overflow-hidden z-10 border-b border-zinc-900/50 bg-[#09090b]">
+  <!-- ================= HERO SECTION (Espaçamento superior ajustado para o header fixo no desktop) ================= -->
+  <section class="relative pt-36 sm:pt-44 md:pt-40 pb-24 md:pb-40 overflow-hidden z-10 border-b border-zinc-900/50 bg-[#09090b]">
     
     <canvas id="galactic-canvas" class="absolute inset-0 z-0 opacity-80"></canvas>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#09090b]/40 to-[#09090b] z-0 pointer-events-none"></div>
@@ -759,7 +759,7 @@
     </div>
   </section>
 
-  <!-- ================= SEÇÃO FINAL: CTA (Botão WhatsApp Corrigido e Proporcional) ================= -->
+  <!-- ================= SEÇÃO FINAL: CTA ================= -->
   <section class="py-32 relative overflow-hidden z-10 bg-[#09090b]">
     <div class="absolute inset-0 bg-gradient-to-b from-[#09090b] via-[#d4af37]/5 to-[#09090b] pointer-events-none"></div>
     
