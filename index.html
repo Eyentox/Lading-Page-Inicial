@@ -52,7 +52,7 @@
           keyframes: {
             float: {
               '0%, 100%': { transform: 'translateY(0)' },
-              '50%': { transform: 'translateY(-15px)' },
+              '50%': { transform: 'translateY(-12px)' },
             },
             slideUp: {
               '0%': { opacity: '0', transform: 'translateY(30px)' },
@@ -176,17 +176,17 @@
 </head>
 <body class="font-sans antialiased selection:bg-brand-gold selection:text-black min-h-screen relative">
 
-  <!-- ================= LUZES DE FUNDO GERAIS (Restritas para não vazar a tela) ================= -->
+  <!-- ================= LUZES DE FUNDO GERAIS ================= -->
   <div class="fixed top-0 left-1/4 w-[300px] md:w-[600px] h-[600px] bg-[#d4af37]/10 rounded-full blur-[150px] pointer-events-none -translate-y-1/2 animate-pulse-slow z-0"></div>
   <div class="fixed top-[40%] right-1/4 w-[300px] md:w-[700px] h-[700px] bg-[#aa820a]/5 rounded-full blur-[150px] pointer-events-none animate-pulse-slow z-0" style="animation-delay: 2s;"></div>
 
-  <!-- ================= HEADER (Absolute transparente no mobile para a logo flutuar sobre o canvas) ================= -->
-  <header class="absolute top-0 left-0 w-full z-50 bg-transparent md:sticky md:top-0 md:backdrop-blur-xl md:bg-[#09090b]/80 md:border-b md:border-zinc-900 transition-all duration-300 py-4 md:py-3">
+  <!-- ================= HEADER ================= -->
+  <header class="absolute top-0 left-0 w-full z-50 bg-transparent md:sticky md:top-0 md:backdrop-blur-xl md:bg-[#09090b]/80 md:border-b md:border-zinc-900 transition-all duration-300 py-5 md:py-3">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
       
-      <!-- Logo Centralizada, Maior, com Animação Sutil e Fundo Integrado ao Canvas -->
+      <!-- Logo Centralizada com Respiro Vertical Adequado e Movimentação Sutil -->
       <a href="#" class="flex items-center justify-center group absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:flex-none md:justify-start">
-        <img src="logo.png" alt="Vetorize Logo" class="h-28 sm:h-32 md:h-28 w-auto object-contain logo-blend animate-float filter drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">
+        <img src="logo.png" alt="Vetorize Logo" class="h-24 sm:h-28 md:h-28 w-auto object-contain logo-blend animate-float filter drop-shadow-[0_0_20px_rgba(212,175,55,0.4)] mt-1 md:mt-0">
       </a>
 
       <!-- Desktop Nav -->
@@ -227,10 +227,9 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION (Padding superior ajustado para acomodar a logo flutuante) ================= -->
-  <section class="relative pt-32 pb-24 md:pt-32 md:pb-40 overflow-hidden z-10 border-b border-zinc-900/50 bg-[#09090b]">
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative pt-36 pb-24 md:pt-32 md:pb-40 overflow-hidden z-10 border-b border-zinc-900/50 bg-[#09090b]">
     
-    <!-- Canvas Tecnológico / Galático (Fundo sob a logo e toda a hero) -->
     <canvas id="galactic-canvas" class="absolute inset-0 z-0 opacity-80"></canvas>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#09090b]/40 to-[#09090b] z-0 pointer-events-none"></div>
 
@@ -241,7 +240,6 @@
         <span class="text-xs font-bold text-brand-gold uppercase tracking-[0.2em]">A Nova Era dos Negócios de Elite</span>
       </div>
 
-      <!-- Frase Escolhida com espaçamento limpo e sem bugs ortográficos -->
       <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.08] mb-8 animate-slide-up">A Engenharia Perfeita para <br class="hidden md:inline"><span class="bg-clip-text text-transparent bg-gradient-to-r from-[#f3e5ab] via-[#d4af37] to-[#aa820a]">o Seu Crescimento</span> <br class="hidden md:inline"><span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-400">sem Limites Operacionais.</span></h1>
 
       <p class="text-zinc-400 text-lg md:text-2xl max-w-3xl mx-auto font-light leading-relaxed mb-12 animate-slide-up" style="animation-delay: 0.1s;">
@@ -287,59 +285,59 @@
     </div>
   </section>
 
-  <!-- ================= CAMADA 1: BRANDING (4 Cores Oficiais) ================= -->
+  <!-- ================= CAMADA 1: BRANDING (Com largura segura e quebra de palavras para mobile) ================= -->
   <section class="py-24 bg-[#0b0b0d] relative z-10 section-glow border-b border-zinc-900/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
       
-      <div class="order-2 md:order-1 space-y-8">
+      <div class="order-2 md:order-1 space-y-8 w-full min-w-0">
         <div class="flex items-center space-x-4">
-            <div class="w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-lg">
+            <div class="w-16 h-16 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center shadow-lg shrink-0">
                 <i data-lucide="palette" class="w-8 h-8 text-brand-gold"></i>
             </div>
             <h3 class="font-display text-3xl md:text-5xl font-bold text-white tracking-tight leading-tight">Branding Estratégico</h3>
         </div>
-        <div class="text-zinc-400 text-lg leading-relaxed space-y-6">
-            <p>Sua empresa de elite não pode parecer "só mais uma". Desenvolvemos uma engenharia de marca que comunica autoridade instantânea e gera conexão profunda com o público de alto padrão.</p>
+        <div class="text-zinc-400 text-base sm:text-lg leading-relaxed space-y-6 w-full break-words">
+            <p class="w-full">Sua empresa de elite não pode parecer "só mais uma". Desenvolvemos uma engenharia de marca que comunica autoridade instantânea e gera conexão profunda com o público de alto padrão.</p>
             <ul class="space-y-4 pt-2">
-                <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-brand-gold"></i><span class="font-medium text-white">Design de Logotipos Imponentes</span></li>
-                <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-brand-gold"></i><span class="font-medium text-white">Manual de Identidade & Paleta Magnética</span></li>
+                <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-brand-gold shrink-0"></i><span class="font-medium text-white">Design de Logotipos Imponentes</span></li>
+                <li class="flex items-center space-x-3"><i data-lucide="check-circle-2" class="w-6 h-6 text-brand-gold shrink-0"></i><span class="font-medium text-white">Manual de Identidade & Paleta Magnética</span></li>
             </ul>
         </div>
       </div>
 
-      <div class="order-1 md:order-2 flex justify-center py-12 px-4 relative">
-        <div class="glass-panel w-full max-w-lg rounded-[2.5rem] p-8 shadow-[0_30px_60px_rgba(0,0,0,0.8)] relative group">
+      <div class="order-1 md:order-2 flex justify-center py-12 px-4 relative w-full min-w-0">
+        <div class="glass-panel w-full max-w-lg rounded-[2.5rem] p-6 sm:p-8 shadow-[0_30px_60px_rgba(0,0,0,0.8)] relative group">
             <div class="mb-8">
                 <div class="flex items-center justify-between mb-3">
                     <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest">Tipografia Principal</span>
                     <span class="text-xs font-mono text-brand-gold bg-brand-gold/10 px-2.5 py-1 rounded-full">Plus Jakarta Sans</span>
                 </div>
                 <div class="flex items-center space-x-6 border-b border-zinc-800 pb-6">
-                    <h1 class="font-display text-6xl font-extrabold text-white leading-none tracking-tighter">Vetorize</h1>
+                    <h1 class="font-display text-5xl sm:text-6xl font-extrabold text-white leading-none tracking-tighter">Vetorize</h1>
                     <div class="h-10 w-px bg-zinc-800"></div>
-                    <p class="font-display text-sm text-zinc-400 tracking-widest uppercase">Luxury Edition</p>
+                    <p class="font-display text-xs sm:text-sm text-zinc-400 tracking-widest uppercase">Luxury</p>
                 </div>
             </div>
             <div>
                 <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block mb-3">Paleta Oficial</span>
-                <div class="flex space-x-3">
+                <div class="flex space-x-2 sm:space-x-3">
                     <div class="flex-1 group/color cursor-pointer text-center">
                         <div class="h-14 bg-[#09090b] rounded-xl border border-zinc-800 transition-all duration-300 md:group-hover/color:h-20 shadow-md"></div>
-                        <span class="text-[10px] text-zinc-500 font-mono mt-1.5 block">#09090B</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-500 font-mono mt-1.5 block">#09090B</span>
                     </div>
                     <div class="flex-1 group/color cursor-pointer text-center">
                         <div class="h-14 bg-[#27272a] rounded-xl border border-zinc-700 transition-all duration-300 md:group-hover/color:h-20 shadow-md"></div>
-                        <span class="text-[10px] text-zinc-400 font-mono mt-1.5 block">#27272A</span>
+                        <span class="text-[9px] sm:text-[10px] text-zinc-400 font-mono mt-1.5 block">#27272A</span>
                     </div>
                     <div class="flex-1 group/color cursor-pointer text-center relative">
                         <div class="absolute -inset-1 bg-brand-gold/20 rounded-xl blur-md opacity-0 md:group-hover/color:opacity-100 transition-opacity"></div>
                         <div class="h-14 bg-[#d4af37] rounded-xl border border-[#aa820a] transition-all duration-300 md:group-hover/color:h-20 relative z-10 shadow-[0_0_15px_rgba(212,175,55,0.3)]"></div>
-                        <span class="text-[10px] text-brand-gold font-mono font-bold mt-1.5 block relative z-10">#D4AF37</span>
+                        <span class="text-[9px] sm:text-[10px] text-brand-gold font-mono font-bold mt-1.5 block relative z-10">#D4AF37</span>
                     </div>
                     <div class="flex-[1.2] group/color cursor-pointer text-center relative">
                         <div class="absolute -inset-1.5 bg-[#f3e5ab]/30 rounded-xl blur-md opacity-0 md:group-hover/color:opacity-100 transition-opacity"></div>
                         <div class="h-14 bg-[#f3e5ab] rounded-xl border border-[#d4af37] transition-all duration-300 md:group-hover/color:h-20 relative z-10 shadow-[0_0_20px_rgba(243,229,171,0.5)]"></div>
-                        <span class="text-[10px] text-[#f3e5ab] font-mono font-bold mt-1.5 block relative z-10">#F3E5AB</span>
+                        <span class="text-[9px] sm:text-[10px] text-[#f3e5ab] font-mono font-bold mt-1.5 block relative z-10">#F3E5AB</span>
                     </div>
                 </div>
             </div>
