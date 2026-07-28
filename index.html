@@ -181,12 +181,12 @@
   <div class="fixed top-[40%] right-1/4 w-[300px] md:w-[700px] h-[700px] bg-[#aa820a]/5 rounded-full blur-[150px] pointer-events-none animate-pulse-slow z-0" style="animation-delay: 2s;"></div>
 
   <!-- ================= HEADER ================= -->
-  <header class="absolute top-0 left-0 w-full z-50 bg-transparent md:sticky md:top-0 md:backdrop-blur-xl md:bg-[#09090b]/80 md:border-b md:border-zinc-900 transition-all duration-300 py-4 md:py-3">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
+  <header class="absolute top-0 left-0 w-full z-50 bg-transparent md:sticky md:top-0 md:backdrop-blur-xl md:bg-[#09090b]/80 md:border-b md:border-zinc-900 transition-all duration-300 py-3 md:py-3">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative min-h-[90px] sm:min-h-0">
       
-      <!-- Logo Ampliada, Deslocada para Baixo e com Movimentação Sutil -->
+      <!-- Logo Centralizada e com Respiro Perfeito no Celular -->
       <a href="#" class="flex items-center justify-center group absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:flex-none md:justify-start">
-        <img src="logo.png" alt="Vetorize Logo" class="h-32 sm:h-38 md:h-32 w-auto object-contain logo-blend animate-float filter drop-shadow-[0_0_25px_rgba(212,175,55,0.5)] translate-y-3 sm:translate-y-4 md:translate-y-0">
+        <img src="logo.png" alt="Vetorize Logo" class="h-28 sm:h-36 md:h-28 w-auto object-contain logo-blend animate-float filter drop-shadow-[0_0_25px_rgba(212,175,55,0.5)] my-2 sm:my-0">
       </a>
 
       <!-- Desktop Nav -->
@@ -227,8 +227,8 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION (Espaçamento superior ajustado para receber a logo maior e mais baixa) ================= -->
-  <section class="relative pt-40 pb-24 md:pt-32 md:pb-40 overflow-hidden z-10 border-b border-zinc-900/50 bg-[#09090b]">
+  <!-- ================= HERO SECTION (Espaçamento superior perfeito para a logo) ================= -->
+  <section class="relative pt-36 sm:pt-44 pb-24 md:pt-32 md:pb-40 overflow-hidden z-10 border-b border-zinc-900/50 bg-[#09090b]">
     
     <canvas id="galactic-canvas" class="absolute inset-0 z-0 opacity-80"></canvas>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#09090b]/40 to-[#09090b] z-0 pointer-events-none"></div>
@@ -240,7 +240,12 @@
         <span class="text-xs font-bold text-brand-gold uppercase tracking-[0.2em]">A Nova Era dos Negócios de Elite</span>
       </div>
 
-      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.08] mb-8 animate-slide-up">A Engenharia Perfeita para <br class="hidden md:inline"><span class="bg-clip-text text-transparent bg-gradient-to-r from-[#f3e5ab] via-[#d4af37] to-[#aa820a]">o Seu Crescimento</span> <br class="hidden md:inline"><span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-400">sem Limites Operacionais.</span></h1>
+      <!-- Frase principal forçada em exatamente 3 linhas limpas -->
+      <h1 class="font-display text-3xl sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.15] sm:leading-[1.08] mb-8 animate-slide-up">
+        A Engenharia Perfeita para <br class="block sm:inline">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#f3e5ab] via-[#d4af37] to-[#aa820a]">o Seu Crescimento</span> <br class="block sm:inline">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-400">sem Limites Operacionais.</span>
+      </h1>
 
       <p class="text-zinc-400 text-lg md:text-2xl max-w-3xl mx-auto font-light leading-relaxed mb-12 animate-slide-up" style="animation-delay: 0.1s;">
         Esqueça ferramentas desconectadas. A Vetorize entrega o ecossistema definitivo que blinda sua operação e eleva o padrão da sua marca no mercado.
@@ -346,7 +351,7 @@
     </div>
   </section>
 
-  <!-- ================= CAMADA 2: SOCIAL MEDIA (Smartphone com Movimentação Fluida) ================= -->
+  <!-- ================= CAMADA 2: SOCIAL MEDIA ================= -->
   <section class="py-24 bg-[#09090b] relative z-10 section-glow border-b border-zinc-900/50 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center relative z-10">
       
@@ -366,7 +371,6 @@
             </div>
         </div>
 
-        <!-- Smartphone com animação de flutuação e hover interativo -->
         <div class="css-phone group z-20 animate-float transition-transform duration-500 hover:scale-105 hover:rotate-1">
             <div class="css-phone-notch"></div>
             <div class="w-full h-full bg-[#050505] pt-8 flex flex-col relative">
@@ -730,7 +734,7 @@
     </div>
   </section>
 
-  <!-- ================= SEÇÃO: ECOSSISTEMA (Espaçamento ortográfico corrigido no celular) ================= -->
+  <!-- ================= SEÇÃO: ECOSSISTEMA ================= -->
   <section id="ecossistema" class="py-32 bg-[#09090b] relative z-10 border-t border-zinc-900/50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="bg-gradient-to-br from-[#0c0c0e] to-[#09090b] border border-zinc-800/80 rounded-[3rem] p-8 sm:p-12 md:p-24 text-center relative overflow-hidden shadow-2xl">
@@ -755,26 +759,26 @@
     </div>
   </section>
 
-  <!-- ================= SEÇÃO FINAL: CTA ================= -->
+  <!-- ================= SEÇÃO FINAL: CTA (Botão WhatsApp Corrigido e Proporcional) ================= -->
   <section class="py-32 relative overflow-hidden z-10 bg-[#09090b]">
     <div class="absolute inset-0 bg-gradient-to-b from-[#09090b] via-[#d4af37]/5 to-[#09090b] pointer-events-none"></div>
     
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="bg-gradient-to-b from-zinc-900 to-[#09090b] border border-zinc-800 rounded-[3rem] p-12 md:p-20 text-center shadow-[0_0_80px_rgba(212,175,55,0.08)] section-glow transition-colors duration-700">
+      <div class="bg-gradient-to-b from-zinc-900 to-[#09090b] border border-zinc-800 rounded-[3rem] p-8 sm:p-12 md:p-20 text-center shadow-[0_0_80px_rgba(212,175,55,0.08)] section-glow transition-colors duration-700">
         
-        <h2 class="font-display text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold text-white tracking-tight mb-10 leading-[1.05]">
+        <h2 class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[5.5rem] font-extrabold text-white tracking-tight mb-10 leading-[1.05]">
           Pronto para escalar sua empresa?<br>
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#f3e5ab] via-[#d4af37] to-[#aa820a] font-black drop-shadow-2xl">Vetorize!</span>
         </h2>
         
-        <p class="text-zinc-400 text-xl md:text-2xl mb-14 max-w-3xl mx-auto font-light leading-relaxed">
+        <p class="text-zinc-400 text-lg sm:text-xl md:text-2xl mb-12 sm:mb-14 max-w-3xl mx-auto font-light leading-relaxed">
           Converse com um especialista agora e descubra a melhor solução para o seu momento atual de mercado.
         </p>
 
         <a href="https://wa.me/5561995769445?text=Olá!%20Achei%20a%20Vetorize%20pelo%20site%20e%20gostaria%20de%20falar%20com%20um%20especialista."
            target="_blank"
-           class="inline-flex items-center justify-center space-x-4 bg-gradient-to-r from-brand-gold to-brand-goldHover text-black font-extrabold px-14 py-6 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_0_40px_rgba(212,175,55,0.4)] gold-glow-hover text-xl uppercase tracking-widest w-full md:w-auto">
-          <i data-lucide="message-circle" class="w-8 h-8 fill-black"></i>
+           class="inline-flex items-center justify-center space-x-3 sm:space-x-4 bg-gradient-to-r from-brand-gold to-brand-goldHover text-black font-extrabold px-6 py-4 sm:px-14 sm:py-6 rounded-full hover:scale-105 active:scale-95 transition-all duration-300 shadow-[0_0_40px_rgba(212,175,55,0.4)] gold-glow-hover text-sm sm:text-xl uppercase tracking-widest w-full md:w-auto">
+          <i data-lucide="message-circle" class="w-6 h-6 sm:w-8 sm:h-8 fill-black shrink-0"></i>
           <span>Iniciar Conversa no WhatsApp</span>
         </a>
       </div>
