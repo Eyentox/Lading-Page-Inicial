@@ -97,23 +97,25 @@
       border-color: #d4af37;
     }
 
-    /* ================= GLASS PANEL EFFECT ================= */
+    /* ================= GLASS PANEL EFFECT (Otimizado para Mobile) ================= */
     .section-glow {
       position: relative;
       overflow: hidden;
       transition: border-color 0.3s ease;
     }
-    .section-glow::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(1000px circle at var(--x, -100px) var(--y, -100px), rgba(212, 175, 55, 0.06), transparent 40%);
-      pointer-events: none;
-      transition: opacity 0.5s;
-      opacity: 0;
-      z-index: 1;
+    @media (hover: hover) {
+      .section-glow::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(1000px circle at var(--x, -100px) var(--y, -100px), rgba(212, 175, 55, 0.06), transparent 40%);
+        pointer-events: none;
+        transition: opacity 0.5s;
+        opacity: 0;
+        z-index: 1;
+      }
+      .section-glow:hover::before { opacity: 1; }
     }
-    .section-glow:hover::before { opacity: 1; }
 
     .glass-panel {
       background: linear-gradient(135deg, rgba(39, 39, 42, 0.5) 0%, rgba(18, 18, 20, 0.8) 100%);
@@ -183,9 +185,9 @@
   <header class="relative z-50 bg-transparent border-none md:sticky md:top-0 md:backdrop-blur-xl md:bg-[#09090b]/80 md:border-b md:border-zinc-900 transition-all duration-300 py-4 md:py-3">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
       
-      <!-- Logo Centralizada no Mobile, Alinhada à Esquerda no Desktop -->
+      <!-- Logo Centralizada, Maior, com Movimentação Sutil e Sem Fundo no Mobile -->
       <a href="#" class="flex items-center justify-center group absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:flex-none md:justify-start">
-        <img src="logo.png" alt="Vetorize Logo" class="h-20 sm:h-24 md:h-28 w-auto object-contain logo-blend filter drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+        <img src="logo.png" alt="Vetorize Logo" class="h-24 sm:h-28 md:h-28 w-auto object-contain logo-blend animate-float filter drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
       </a>
 
       <!-- Desktop Nav -->
@@ -240,11 +242,11 @@
         <span class="text-xs font-bold text-brand-gold uppercase tracking-[0.2em]">A Nova Era dos Negócios de Elite</span>
       </div>
 
-      <!-- Nova Frase com Impacto Máximo -->
+      <!-- Nova Frase Escolhida -->
       <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.08] mb-8 animate-slide-up">
         A Engenharia Perfeita para <br class="hidden md:inline">
         <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#f3e5ab] via-[#d4af37] to-[#aa820a]">o Seu Crescimento</span> <br class="hidden md:inline">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-400"> sem Limites Operacionais.</span>
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-400">sem Limites Operacionais.</span>
       </h1>
 
       <p class="text-zinc-400 text-lg md:text-2xl max-w-3xl mx-auto font-light leading-relaxed mb-12 animate-slide-up" style="animation-delay: 0.1s;">
@@ -290,7 +292,7 @@
     </div>
   </section>
 
-  <!-- ================= CAMADA 1: BRANDING (4 CORES OFICIAIS) ================= -->
+  <!-- ================= CAMADA 1: BRANDING (4 Cores Oficiais com Correção Mobile) ================= -->
   <section class="py-24 bg-[#0b0b0d] relative z-10 section-glow border-b border-zinc-900/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
       
@@ -310,7 +312,7 @@
         </div>
       </div>
 
-      <!-- Mockup HTML/CSS: Brand Identity (4 Cores) -->
+      <!-- Mockup HTML/CSS: Brand Identity (Paleta com hover seguro para mobile) -->
       <div class="order-1 md:order-2 flex justify-center py-12 px-4 relative">
         <div class="glass-panel w-full max-w-lg rounded-[2.5rem] p-8 shadow-[0_30px_60px_rgba(0,0,0,0.8)] relative group">
             <div class="mb-8">
@@ -328,21 +330,21 @@
                 <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block mb-3">Paleta Oficial (Hover)</span>
                 <div class="flex space-x-3">
                     <div class="flex-1 group/color cursor-pointer text-center">
-                        <div class="h-14 bg-[#09090b] rounded-xl border border-zinc-800 transition-all duration-300 group-hover/color:h-20 shadow-md"></div>
+                        <div class="h-14 bg-[#09090b] rounded-xl border border-zinc-800 transition-all duration-300 md:group-hover/color:h-20 shadow-md"></div>
                         <span class="text-[10px] text-zinc-500 font-mono mt-1.5 block">#09090B</span>
                     </div>
                     <div class="flex-1 group/color cursor-pointer text-center">
-                        <div class="h-14 bg-[#27272a] rounded-xl border border-zinc-700 transition-all duration-300 group-hover/color:h-20 shadow-md"></div>
+                        <div class="h-14 bg-[#27272a] rounded-xl border border-zinc-700 transition-all duration-300 md:group-hover/color:h-20 shadow-md"></div>
                         <span class="text-[10px] text-zinc-400 font-mono mt-1.5 block">#27272A</span>
                     </div>
                     <div class="flex-1 group/color cursor-pointer text-center relative">
-                        <div class="absolute -inset-1 bg-brand-gold/20 rounded-xl blur-md opacity-0 group-hover/color:opacity-100 transition-opacity"></div>
-                        <div class="h-14 bg-[#d4af37] rounded-xl border border-[#aa820a] transition-all duration-300 group-hover/color:h-20 relative z-10 shadow-[0_0_15px_rgba(212,175,55,0.3)]"></div>
+                        <div class="absolute -inset-1 bg-brand-gold/20 rounded-xl blur-md opacity-0 md:group-hover/color:opacity-100 transition-opacity"></div>
+                        <div class="h-14 bg-[#d4af37] rounded-xl border border-[#aa820a] transition-all duration-300 md:group-hover/color:h-20 relative z-10 shadow-[0_0_15px_rgba(212,175,55,0.3)]"></div>
                         <span class="text-[10px] text-brand-gold font-mono font-bold mt-1.5 block relative z-10">#D4AF37</span>
                     </div>
                     <div class="flex-[1.2] group/color cursor-pointer text-center relative">
-                        <div class="absolute -inset-1.5 bg-[#f3e5ab]/30 rounded-xl blur-md opacity-0 group-hover/color:opacity-100 transition-opacity"></div>
-                        <div class="h-14 bg-[#f3e5ab] rounded-xl border border-[#d4af37] transition-all duration-300 group-hover/color:h-20 relative z-10 shadow-[0_0_20px_rgba(243,229,171,0.5)]"></div>
+                        <div class="absolute -inset-1.5 bg-[#f3e5ab]/30 rounded-xl blur-md opacity-0 md:group-hover/color:opacity-100 transition-opacity"></div>
+                        <div class="h-14 bg-[#f3e5ab] rounded-xl border border-[#d4af37] transition-all duration-300 md:group-hover/color:h-20 relative z-10 shadow-[0_0_20px_rgba(243,229,171,0.5)]"></div>
                         <span class="text-[10px] text-[#f3e5ab] font-mono font-bold mt-1.5 block relative z-10">#F3E5AB</span>
                     </div>
                 </div>
@@ -864,14 +866,16 @@
           });
         });
 
-        // Efeito Glass Panel Hover
-        document.querySelectorAll('.section-glow, .glass-panel').forEach(el => {
-          el.addEventListener('mousemove', (e) => {
-            const rect = el.getBoundingClientRect();
-            el.style.setProperty('--x', `${e.clientX - rect.left}px`);
-            el.style.setProperty('--y', `${e.clientY - rect.top}px`);
+        // Efeito Glass Panel Hover (Ativo apenas se houver suporte a mouse)
+        if (window.matchMedia('(hover: hover)').matches) {
+          document.querySelectorAll('.section-glow, .glass-panel').forEach(el => {
+            el.addEventListener('mousemove', (e) => {
+              const rect = el.getBoundingClientRect();
+              el.style.setProperty('--x', `${e.clientX - rect.left}px`);
+              el.style.setProperty('--y', `${e.clientY - rect.top}px`);
+            });
           });
-        });
+        }
 
         // Animações de Scroll
         const observerOptions = { root: null, rootMargin: '0px', threshold: 0.3 };
