@@ -2,7 +2,7 @@
 <html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>VETORIZE | Gestão Inteligente & Marketing Premium</title>
   <meta name="description" content="O ecossistema monumental que une Marketing Premium de alto impacto a um Software de Gestão Comercial avançada para empresas de elite.">
   
@@ -83,7 +83,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <style type="text/css">
-    body { background-color: #09090b; color: #f4f4f5; overflow-x: hidden; }
+    html, body { background-color: #09090b; color: #f4f4f5; overflow-x: hidden; width: 100%; position: relative; }
     
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: #09090b; }
@@ -97,7 +97,7 @@
       border-color: #d4af37;
     }
 
-    /* ================= GLASS PANEL EFFECT (Otimizado para Mobile) ================= */
+    /* ================= GLASS PANEL EFFECT ================= */
     .section-glow {
       position: relative;
       overflow: hidden;
@@ -176,18 +176,17 @@
 </head>
 <body class="font-sans antialiased selection:bg-brand-gold selection:text-black min-h-screen relative">
 
-  <!-- ================= LUZES DE FUNDO GERAIS ================= -->
-  <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-[#d4af37]/10 rounded-full blur-[150px] pointer-events-none -translate-y-1/2 animate-pulse-slow z-0"></div>
-  <div class="fixed top-[40%] right-1/4 w-[700px] h-[700px] bg-[#aa820a]/5 rounded-full blur-[150px] pointer-events-none animate-pulse-slow z-0" style="animation-delay: 2s;"></div>
-  <div class="fixed bottom-0 left-1/3 w-[600px] h-[600px] bg-[#d4af37]/10 rounded-full blur-[150px] pointer-events-none animate-pulse-slow z-0" style="animation-delay: 4s;"></div>
+  <!-- ================= LUZES DE FUNDO GERAIS (Restritas para não vazar a tela) ================= -->
+  <div class="fixed top-0 left-1/4 w-[300px] md:w-[600px] h-[600px] bg-[#d4af37]/10 rounded-full blur-[150px] pointer-events-none -translate-y-1/2 animate-pulse-slow z-0"></div>
+  <div class="fixed top-[40%] right-1/4 w-[300px] md:w-[700px] h-[700px] bg-[#aa820a]/5 rounded-full blur-[150px] pointer-events-none animate-pulse-slow z-0" style="animation-delay: 2s;"></div>
 
-  <!-- ================= HEADER ================= -->
-  <header class="relative z-50 bg-transparent border-none md:sticky md:top-0 md:backdrop-blur-xl md:bg-[#09090b]/80 md:border-b md:border-zinc-900 transition-all duration-300 py-4 md:py-3">
+  <!-- ================= HEADER (Absolute transparente no mobile para a logo flutuar sobre o canvas) ================= -->
+  <header class="absolute top-0 left-0 w-full z-50 bg-transparent md:sticky md:top-0 md:backdrop-blur-xl md:bg-[#09090b]/80 md:border-b md:border-zinc-900 transition-all duration-300 py-4 md:py-3">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
       
-      <!-- Logo Centralizada, Maior, com Movimentação Sutil e Sem Fundo no Mobile -->
+      <!-- Logo Centralizada, Maior, com Animação Sutil e Fundo Integrado ao Canvas -->
       <a href="#" class="flex items-center justify-center group absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:flex-none md:justify-start">
-        <img src="logo.png" alt="Vetorize Logo" class="h-24 sm:h-28 md:h-28 w-auto object-contain logo-blend animate-float filter drop-shadow-[0_0_15px_rgba(212,175,55,0.3)]">
+        <img src="logo.png" alt="Vetorize Logo" class="h-28 sm:h-32 md:h-28 w-auto object-contain logo-blend animate-float filter drop-shadow-[0_0_20px_rgba(212,175,55,0.4)]">
       </a>
 
       <!-- Desktop Nav -->
@@ -228,26 +227,22 @@
     </div>
   </header>
 
-  <!-- ================= HERO SECTION (COM FUNDO GALÁTICO INTERATIVO) ================= -->
-  <section class="relative pt-16 pb-24 md:pt-32 md:pb-40 overflow-hidden z-10 border-b border-zinc-900/50 bg-[#09090b]">
+  <!-- ================= HERO SECTION (Padding superior ajustado para acomodar a logo flutuante) ================= -->
+  <section class="relative pt-32 pb-24 md:pt-32 md:pb-40 overflow-hidden z-10 border-b border-zinc-900/50 bg-[#09090b]">
     
-    <!-- Canvas Tecnológico / Galático -->
+    <!-- Canvas Tecnológico / Galático (Fundo sob a logo e toda a hero) -->
     <canvas id="galactic-canvas" class="absolute inset-0 z-0 opacity-80"></canvas>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#09090b]/40 to-[#09090b] z-0 pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
       
-      <div class="inline-flex items-center space-x-3 border border-brand-gold/30 bg-brand-gold/5 px-5 py-2 rounded-full mb-10 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+      <div class="inline-flex items-center space-x-3 border border-brand-gold/30 bg-brand-gold/5 px-5 py-2 rounded-full mb-8 shadow-[0_0_15px_rgba(212,175,55,0.1)]">
         <span class="flex w-2.5 h-2.5 rounded-full bg-brand-gold animate-pulse"></span>
         <span class="text-xs font-bold text-brand-gold uppercase tracking-[0.2em]">A Nova Era dos Negócios de Elite</span>
       </div>
 
-      <!-- Nova Frase Escolhida -->
-      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.08] mb-8 animate-slide-up">
-        A Engenharia Perfeita para <br class="hidden md:inline">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#f3e5ab] via-[#d4af37] to-[#aa820a]">o Seu Crescimento</span> <br class="hidden md:inline">
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-400">sem Limites Operacionais.</span>
-      </h1>
+      <!-- Frase Escolhida com espaçamento limpo e sem bugs ortográficos -->
+      <h1 class="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[5rem] font-extrabold tracking-tight text-white max-w-5xl mx-auto leading-[1.08] mb-8 animate-slide-up">A Engenharia Perfeita para <br class="hidden md:inline"><span class="bg-clip-text text-transparent bg-gradient-to-r from-[#f3e5ab] via-[#d4af37] to-[#aa820a]">o Seu Crescimento</span> <br class="hidden md:inline"><span class="bg-clip-text text-transparent bg-gradient-to-r from-white via-zinc-200 to-zinc-400">sem Limites Operacionais.</span></h1>
 
       <p class="text-zinc-400 text-lg md:text-2xl max-w-3xl mx-auto font-light leading-relaxed mb-12 animate-slide-up" style="animation-delay: 0.1s;">
         Esqueça ferramentas desconectadas. A Vetorize entrega o ecossistema definitivo que blinda sua operação e eleva o padrão da sua marca no mercado.
@@ -292,7 +287,7 @@
     </div>
   </section>
 
-  <!-- ================= CAMADA 1: BRANDING (4 Cores Oficiais com Correção Mobile) ================= -->
+  <!-- ================= CAMADA 1: BRANDING (4 Cores Oficiais) ================= -->
   <section class="py-24 bg-[#0b0b0d] relative z-10 section-glow border-b border-zinc-900/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
       
@@ -312,7 +307,6 @@
         </div>
       </div>
 
-      <!-- Mockup HTML/CSS: Brand Identity (Paleta com hover seguro para mobile) -->
       <div class="order-1 md:order-2 flex justify-center py-12 px-4 relative">
         <div class="glass-panel w-full max-w-lg rounded-[2.5rem] p-8 shadow-[0_30px_60px_rgba(0,0,0,0.8)] relative group">
             <div class="mb-8">
@@ -327,7 +321,7 @@
                 </div>
             </div>
             <div>
-                <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block mb-3">Paleta Oficial (Hover)</span>
+                <span class="text-xs font-mono text-zinc-500 uppercase tracking-widest block mb-3">Paleta Oficial</span>
                 <div class="flex space-x-3">
                     <div class="flex-1 group/color cursor-pointer text-center">
                         <div class="h-14 bg-[#09090b] rounded-xl border border-zinc-800 transition-all duration-300 md:group-hover/color:h-20 shadow-md"></div>
@@ -358,7 +352,6 @@
   <section class="py-24 bg-[#09090b] relative z-10 section-glow border-b border-zinc-900/50 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center relative z-10">
       
-      <!-- Mockup Celular -->
       <div class="order-1 flex justify-center py-10 relative">
         <div class="absolute top-8 right-2 md:right-10 bg-white/10 backdrop-blur-xl border border-white/20 p-3 rounded-2xl shadow-2xl flex items-center space-x-3 animate-float z-30">
             <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-pink-600 to-red-500 flex items-center justify-center shadow-inner"><i data-lucide="heart" class="w-4 h-4 text-white"></i></div>
@@ -809,7 +802,6 @@
         <h4 class="font-bold text-white uppercase text-sm tracking-widest mb-6 border-b border-zinc-800 pb-2 inline-block">Contato</h4>
         <ul class="space-y-5 text-base font-medium">
           <li><a href="mailto:vetorizesupp@gmail.com" class="flex items-center space-x-3 hover:text-brand-gold transition-colors"><div class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center"><i data-lucide="mail" class="w-5 h-5 text-brand-gold"></i></div><span>vetorizesupp@gmail.com</span></a></li>
-          <!-- ÍCONE DO INSTAGRAM BLINDADO VIA SVG INLINE -->
           <li>
             <a href="https://instagram.com/vetorize.br" target="_blank" class="flex items-center space-x-3 hover:text-brand-gold transition-colors group">
               <div class="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center border border-zinc-800 group-hover:border-brand-gold transition-colors">
@@ -866,7 +858,7 @@
           });
         });
 
-        // Efeito Glass Panel Hover (Ativo apenas se houver suporte a mouse)
+        // Efeito Glass Panel Hover
         if (window.matchMedia('(hover: hover)').matches) {
           document.querySelectorAll('.section-glow, .glass-panel').forEach(el => {
             el.addEventListener('mousemove', (e) => {
@@ -958,7 +950,7 @@
 
             function initParticles() {
                 particlesArray = [];
-                let numberOfParticles = window.innerWidth < 768 ? 40 : 80;
+                let numberOfParticles = window.innerWidth < 768 ? 35 : 80;
                 for (let i = 0; i < numberOfParticles; i++) {
                     particlesArray.push(new Particle());
                 }
